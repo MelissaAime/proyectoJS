@@ -1,0 +1,359 @@
+//Reseteo inicial
+* {
+  margin: 0;
+  padding: 0;
+}
+
+//Import Archivo de variables
+@import "variables";
+
+//Main
+main {
+  background-color: $colorMain;
+  padding-bottom: 3rem;
+}
+
+//Body
+body {
+  max-width: 100%;
+}
+
+div.subNav{
+  background-color: $colorNavbar;
+  width: 100%;
+  position: sticky;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+//Botón del precio
+p#precioTotal{
+  font-size: 1.2rem;
+  margin-bottom: 0;
+  padding: 0.5rem;
+}
+p#totalQuince{
+  font-size: 1.2rem;
+  margin-bottom: 0;
+  padding: 0.5rem;
+}
+
+
+
+//Navbar
+.navbar {
+  background-color: $colorNavbar;
+  width: 100%;
+  position: sticky;
+  font-size: 1.3rem;
+}
+.imageNavbar {
+  height: 3.5rem;
+  width: 3.5rem;
+}
+
+.product {
+  margin: 0 1rem;
+  padding: 2rem 0;
+}
+
+//SECTION HOME
+//Titulos
+h1.titleHome {
+  text-align: center;
+  font-family: $typTitle;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-shadow: 0.1em 0.1em 0.07em gray;
+}
+
+.gridHome {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: 15% 10% 75%;
+  grid-template-areas:
+    "titleP titleP"
+    "imagen title2"
+    "imagen texto";
+  justify-items: center;
+  align-items: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  &__titleHome {
+    grid-area: titleP;
+    font-family: $typTitle;
+    text-shadow: 0.1em 0.1em 0.07em gray;
+  }
+  &__img {
+    grid-area: imagen;
+    width: 90%;
+    height: 90%;
+  }
+  &__img2 {
+    width: 0%;
+    height: 0%;
+  }
+  &__titleTwo {
+    grid-area: title2;
+    padding-top: 1.3rem;
+  }
+  &__text {
+    grid-area: texto;
+    width: 80%;
+    font-size: 1.7rem;
+    text-align: justify;
+  }
+}
+
+//Texto del carrousel
+h4 {
+  font-size: 2.7rem;
+  text-shadow: 0.1em 0.1em 0.07em white;
+}
+p.textCarousel {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 0.1em 0.1em 0.07em white;
+}
+
+//SECTION CONTACT
+.gridContact {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: 45% 10% 45%;
+  grid-template-areas:
+    "contact img"
+    "contact text"
+    "contact map";
+  justify-items: center;
+  align-items: center;
+  padding: 1rem;
+
+  &__contact {
+    grid-area: contact;
+    width: 80%;
+  }
+  &__img {
+    grid-area: img;
+    width: 100%;
+    height: 100%;
+  }
+  &__map {
+    grid-area: map;
+    width: 100%;
+    height: 100%;
+  }
+  &__text {
+    grid-area: text;
+    align-self: center;
+    margin: 0;
+    font-size: 1.3rem;
+    font-style: italic;
+    text-shadow: 0.1em 0.1em 0.07em gray;
+  }
+}
+
+h2.textContact {
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+  font-family: $typTitle;
+  text-shadow: 0.1em 0.1em 0.07em gray;
+}
+
+fieldset {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .containerContact {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .containerContactButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+
+//FOOTER
+.gridFooter {
+  height: 18rem;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 50% 50%;
+  grid-row-gap: 3rem;
+  grid-template-areas:
+    "navegador newslett"
+    "navegador redes";
+  justify-items: center;
+  padding: 1rem;
+
+  &__divOne {
+    grid-area: newslett;
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    div.text-center--flex {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+  &__divTwo {
+    grid-area: navegador;
+
+    li {
+      list-style: none;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+  }
+  &__divThree {
+    grid-area: redes;
+
+    p {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+  }
+}
+
+//SECTION MARIDAJE
+.gridMTitulo{
+    text-align: center;
+    font-family: $typTitle;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-shadow: 0.1em 0.1em 0.07em gray;
+}
+.gridMaridaje {
+  height: auto;
+  display: grid;
+  grid-template-columns: 55% 40% 5%;
+  grid-template-rows: 15% 85%;
+  grid-template-areas:
+    "imagen1 titulo1 ."
+    "imagen1 texto1 .";
+  justify-items: center;
+  padding: 1rem;
+
+  &__img{grid-area: imagen1; width: 80%; height: 80%;};
+  &__title{
+    grid-area: titulo1;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    text-shadow: 0.1em 0.1em 0.3em gray;
+    font-family: $typTitle;
+  }
+  &__text{
+    grid-area: texto1; 
+    text-align: justify;
+    font-size: 1rem;
+  }
+
+}
+.gridMaridajeTwo {
+    height: auto;
+  display: grid;
+  grid-template-columns: 5% 40% 55%;
+  grid-template-rows: 5% 5% 90%;
+  grid-row-gap: 2rem;
+  grid-template-areas:
+    ". titulo2 imagen2"
+    ". texto2 imagen2"
+    ". acordeon imagen2";
+  justify-items: center;
+  padding: 1rem;  
+
+  &__imgTwo{grid-area: imagen2; width: 80%; height: 30rem;};
+  &__titleTwo{
+    grid-area: titulo2;
+    font-size: 1.5rem;
+    text-shadow: 0.1em 0.1em 0.3em gray;
+    font-family: $typTitle;
+    text-align: center;
+  }
+  &__textTwo{
+    grid-area: texto2;
+    text-align: justify;
+    font-size: 1rem;
+  }
+  &__acord{grid-area: acordeon; width: 100%;}
+
+}
+.gridMaridajeThree {
+    height: auto;
+  display: grid;
+  grid-template-columns: 55% 40% 5%;
+  grid-template-rows: 23% 77%;
+  grid-template-areas:
+    "imagen3 titulo3 ."
+    "imagen3 texto3 .";
+  justify-items: center;
+  padding: 1rem;
+
+  &__imgThree{grid-area: imagen3; width: 80%; height: 80%;};
+  &__titleThree{
+    grid-area: titulo3;
+    font-size: 1.5rem;
+    text-shadow: 0.1em 0.1em 0.3em gray;
+    font-family: $typTitle;
+    text-align: center;
+  }
+  &__textThree{
+    grid-area: texto3;
+    text-align: justify;
+    font-size: 1rem;
+  }
+
+}
+
+.accordion-button{
+    background-color: $colorMain;
+    border: 0.01rem solid gray;
+}
+div.accordion-item{
+  text-align: justify;
+}
+
+//SECCION PRODUCTOS
+h1.titleProduc{
+    font-family: $typTitle;
+    text-shadow: 0.1em 0.1em 0.07em gray;
+}
+
+.cantVinos{
+  width: 6rem;
+  height: 2.3rem;
+  align-content: center;
+}
+
+//cards product y home
+.card-img-top{
+  height: 220px;
+}
+.card-title{
+  font-size: 1.5rem;
+}
+.card-text{
+  font-size: 1rem;
+}
+
+
+//Media query
+@import "mediaquery";

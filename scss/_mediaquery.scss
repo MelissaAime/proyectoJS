@@ -1,0 +1,276 @@
+@media only screen and (max-width: 600px) {
+  main {
+    padding-bottom: 0.2rem;
+  }
+
+  //Contact
+  .gridContact {
+    max-width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 18% 50% 3% 29%;
+    grid-row-gap: 1rem;
+    grid-template-areas:
+      "img"
+      "contact"
+      "text"
+      "map";
+    justify-items: center;
+    align-items: center;
+    padding: 0;
+    margin: 1rem 0 2.3rem 0;
+
+    &__contact {
+      grid-area: contact;
+    }
+    &__img {
+      grid-area: img;
+      width: 80%;
+      height: 95%;
+    }
+    &__map {
+      grid-area: map;
+      width: 80%;
+      height: 80%;
+      align-self: start;
+    }
+    &__text {
+      grid-area: text;
+      align-self: center;
+      margin: 0;
+      font-size: 1.3rem;
+      font-style: italic;
+    }
+  }
+  label.input-group-text {
+    font-size: 0.8rem;
+  }
+  select.form-select {
+    font-size: 0.8rem;
+  }
+
+  .gridHome {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 32% 8% 20% 30%;
+    grid-template-areas:
+      "titleP"
+      "imagen"
+      "title2"
+      "texto"
+      "imagen2";
+    justify-items: center;
+    align-items: center;
+    padding: 0.7rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    &__titleHome {
+      grid-area: titleP;
+    }
+    &__img {
+      grid-area: imagen;
+      width: 80%;
+      height: 100%;
+    }
+    &__titleTwo {
+      grid-area: title2;
+      padding-top: 0.4rem;
+    }
+    &__text {
+      grid-area: texto;
+      width: 80%;
+      font-size: 0.7rem;
+      text-align: justify;
+    }
+    &__img2 {
+      grid-area: imagen2;
+      width: 80%;
+      height: 100%;
+    }
+  }
+
+  fieldset {
+    .containerContact {
+      flex-direction: column;
+      div {
+        margin-bottom: 0.3rem;
+      }
+    }
+  }
+
+  //navbar
+  .navbar {
+    font-size: 0.7rem;
+  }
+  .card-body {
+    a {
+      font-size: 0.5rem;
+    }
+  }
+  .card-body {
+    a {
+      img {
+        width: 0.7rem;
+        height: 0.7rem;
+      }
+    }
+  }
+  .text-center--flex {
+    margin-bottom: 1.4rem;
+
+    button {
+      font-size: 0.6rem;
+      width: auto;
+      padding: 0.2rem;
+      margin: 0;
+    }
+    input {
+      width: 60%;
+      height: 1.3rem;
+      font-size: 0.7rem;
+    }
+  }
+  a.dropdown-item {
+    font-size: 0.6rem;
+  }
+  form.d-flex input {
+    font-size: 0.6rem;
+  }
+  form.d-flex button {
+    font-size: 0.6rem;
+  }
+
+  //FOOTER
+  .gridFooter {
+    height: 14rem;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 65% 35%;
+    grid-row-gap: 0.3rem;
+    grid-template-areas:
+      "navegador redes"
+      "newslett newslett";
+    justify-items: center;
+    padding: 1rem;
+
+    &__divOne {
+      h3 {
+        font-size: 0.7rem;
+      }
+      p {
+        font-size: 0.5rem;
+      }
+    }
+
+    &__divTwo {
+      li {
+        font-size: 0.5rem;
+      }
+      a {
+        font-size: 0.7rem;
+      }
+    }
+    &__divThree {
+      p {
+        font-size: 0.7rem;
+      }
+    }
+  }
+
+  //cards product y home
+  .card-img-top {
+    height: 120px;
+  }
+  .card-title {
+    font-size: 1rem;
+  }
+  .card-text {
+    font-size: 0.7rem;
+  }
+
+  //SECTION MARIDAJE
+  .gridMTitulo {
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    margin: 0;
+  }
+  .gridMaridaje {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 55% 12% 33%;
+    grid-template-areas:
+      "imagen1"
+      "titulo1"
+      "texto1";
+    padding: 0.5rem;
+
+    &__title {
+      font-size: 1rem;
+    }
+    &__text {
+      font-size: 0.6rem;
+      padding: 0 1rem;
+    }
+  }
+  .gridMaridajeTwo {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 30% 4% 6% 60%;
+    grid-template-areas:
+      "imagen2"
+      "titulo2"
+      "texto2"
+      "acordeon";
+    justify-items: center;
+    padding: 0.5rem;
+
+    &__imgTwo {
+      grid-area: imagen2;
+      width: 80%;
+      height: 12rem;
+    }
+    &__titleTwo {
+      font-size: 1rem;
+    }
+    &__textTwo {
+      font-size: 0.6rem;
+      padding: 0 1rem;
+    }
+    &__acord {
+      width: 80%;
+    }
+  }
+  .gridMaridajeThree {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 45% 15% 40%;
+    grid-template-areas:
+      "imagen3"
+      "titulo3"
+      "texto3";
+    justify-items: center;
+    padding: 0.5rem;
+
+    &__titleThree {
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+    &__textThree {
+      font-size: 0.6rem;
+      padding: 0 1rem;
+    }
+  }
+
+  button.accordion-button.collapsed{
+    height: 2rem;
+  }
+  
+  div.accordion-item{
+    font-size: 0.6rem;
+    height: auto;
+  }
+}

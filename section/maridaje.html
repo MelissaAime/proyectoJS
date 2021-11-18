@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Name-->
+    <title>La Bodega</title>
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="../favicon.png">
+
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!--Css-->
+    <link rel="stylesheet" href="../css/stylecss.css">
+
+    <!--Typography-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+
+    <!--Keywords-->
+    <meta name="description" content="Bienvenidos a La Bodega, aquí encontraran gran variedad de vinos.">
+    <meta name="keywords" content="Bodega, bodegas, vino, vinos, tinto, malbec, blanco, rosado, rose">
+
+</head>
+<body>
+    <!--Navbar-->
+    <nav class="navbar sticky-top navbar-expand-sm navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html"> <img src="../multimedia/logo.png" class="imageNavbar" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+                    </li>
+    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="product.html" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="product.html">Box</a></li>
+                            <li><a class="dropdown-item" href="product.html">Vinos Tintos</a></li>
+                            <li><a class="dropdown-item" href="product.html">Vinos Blancos</a></li>
+                            <li><a class="dropdown-item" href="product.html">Vinos Rosados</a></li>
+                            <li><a class="dropdown-item" href="product.html">Espumantes</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="product.html">Todo</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="maridaje.html">Maridaje</a>
+                      </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contacto</a>
+                    </li>
+    
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+                </form>
+    
+            </div>
+        </div>
+    </nav>
+
+    <div class="subNav">
+        <p id="saludando"> </p>
+        <p id="total"></p>
+        <p id="totalQuince"></p>
+        <p id="totalVeinte"></p>
+    </div>
+    
+    <!--Main-->
+    <main>
+
+    <h1 class="gridMTitulo">Un buen maridaje</h1>
+    <div class="gridMaridaje">
+        <img src="../multimedia/maridaje1.jpg" class="gridMaridaje__img" alt="imagen">
+        <h6 class="gridMaridaje__title">¿Qué es el maridaje?</h6>
+        <p class="gridMaridaje__text">El maridaje es el proceso de combinar alimentos con vino, es decir, seleccionar el vino que mejor se ajuste a las características organolépticas del alimento, para potenciar todos sus matices. El objetivo del maridaje es ofrecer al paladar sensaciones agradables que inviten a disfrutar de una comida con un buen vino. Este proceso es muy recurrente entre los profesionales de la enología y la gastronomía, pero también entre los paladares aficionados.</p>
+    </div>     
+
+    <div class="gridMaridajeTwo">
+        <h6 class="gridMaridajeTwo__titleTwo">Selección de vinos para cada alimento:</h6>
+        <p class="gridMaridajeTwo__textTwo">Existen combinaciones que son más recomendables dependiendo del tipo de comida.</p>
+        <div class="gridMaridajeTwo__acord" class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Vinos y carnes rojas:
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Carnes grasas: Van de maravillas con vinos tintos de variedades intensas, con
+                        paso por barrica. Malbec, Cabernet Sauvignon, Cabernet Franc, Bonarda, Petit Verdot y Tannat.
+                        Carnes magras: Prefieren tintos con leve paso por barricas y variedades con taninos medios o escasos.
+                        Pinot Noir, Merlot, Tempranillo (Argentina) y Sangiovese.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Vinos y pescados:
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Pescados grasos: Se entienden muy bien con blancos con prolongado paso por
+                        barrica (Chardonnay, Viognier, Semillón) o tintos ligeros (Pinot Noir, Merlot).
+                        Pescados magros: Combinan muy bien con vinos blancos ligeros, frescos, frutados (Sauvignon Blanc,
+                        Torrontés, Tocai Friulano).</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Vinos y carnes blancas:
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Pollo y cerdo: Logran un excelente tándem con vinos tintos leves o con leve paso
+                        por barricas (Pinot Noir, nuevamente, un comodín). Pueden ir muy bien Malbecs jóvenes o Cabernet
+                        Sauvignon modernos. Asimismo, combinan con Merlot (sin madera) o un joven Cabernet Franc. Entre las
+                        blancas, las variedades ideales son Chardonnay (pequeño paso por madera), Viognier o Semillón.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                        Vinos rosados:
+                    </button>
+                </h2>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Las etiquetas rosés son gratas opciones para armonizar: picadas, arne de pollo y
+                        cerdo, ciertas carnes rojas (entraña, tapa de nalga, colita de cuadril, lomo), ensaladas de camarones,
+                        frutos de mar, mariscos, pescados magros y grasos.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                        Vino y picante:
+                    </button>
+                </h2>
+                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Picor más picor equivale a “fuego” para el paladar. Demasiada intensidad,
+                        demasiado ardor. Por ello, es importante bajar esa sensación picantita con un vino blanco ágil, fresco,
+                        ligero, sin mucho volumen. Ejemplos de variedades: Torrontés, Sauvignon Blanc, Tocai o Viognier sin paso
+                        por barricas.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                        Vino y dulce:
+                    </button>
+                </h2>
+                <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Lo ideal es que lo dulce vaya con lo dulce. Tortas, postres, frutas y
+                        elaboraciones con cierto tenor dulzón, combinan a la perfección con espumosos demi sec o dulces y vinos
+                        cosechas tardías o dulces naturales.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingSeven">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                        Vinos y quesos:
+                    </button>
+                </h2>
+                <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Con la mozzarella como estandarte, deben estar presentes en otros alimentos de
+                        sabores también suaves para no ser opacados. Recomendación: vinos blancos muy jóvenes y frescos de notas
+                        herbáceas y florales se complementan muy bien, así como espumosos Brut o Demi Sec. Brie y Camembert son
+                        los elixires de este estilo peculiar. Podemos acompañarlos con vinos blancos estructurados con cierta
+                        acidez y muy aromáticos o tintos jóvenes ligeros y frescos (Pinot Noir). Roquefort, Gorgonzola, Stilton
+                        o Cabrales son ideales para acompañar vinos de cosechas tardías, dulces naturales o fortificados.</div>
+                </div>
+            </div>
+        </div>
+        <img src="../multimedia/maridaje2.jpg" class="gridMaridajeTwo__imgTwo" alt="foto">
+    </div>    
+
+    <div class="gridMaridajeThree">
+        <h6 class="gridMaridajeThree__titleThree">No olvidar que el maridaje es cuestión de gustos.</h6>
+        <p class="gridMaridajeThree__textThree">Las anteriores son recomendaciones generalizadas que ayudan a seleccionar los vinos que más se ajusten al menú, pero no dejan de ser eso, cuestiones globales. Al final, todo depende de nuestra propia experiencia combinando sabores, conociendo vinos, texturas y sensaciones. Habitualmente, cuando un vino se disfruta bebiéndolo solo, sin acompañamiento, puede ajustarse sin problemas a cualquier plato siempre que se respeten las normas básicas comentadas.</p>
+        <img src="../multimedia/maridaje3.jpg" class="gridMaridajeThree__imgThree" alt="">
+    </div>   
+
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <section class="gridFooter">
+            <!--Newsletter-->
+            <div class="gridFooter__divOne">
+                <div class="text-center">
+                    <h3>Suscribite a nuestro newsletter</h3>
+                    <p>Y recibí todas las novedades y descuentos exclusivos</p>
+                </div>
+               <div class="text-center--flex">
+                    <input class="form-control" type="search" placeholder="Ingresa tu email" >
+                    <button class="btn btn-outline-secondary" type="submit">Suscribir</button>
+               </div>
+    
+            </div>
+    
+            <!--Navegador-->
+            <div class="gridFooter__divTwo">
+                <ul>
+                    <li><a href="product.html">Productos</a></li>
+                    <ul>
+                        <li>Box</li>
+                        <li>Vinos Tintos</li>
+                        <li>Vinos Blancos</li>
+                        <li>Vinos Rosados</li>
+                        <li>Espumantes</li>
+                    </ul>
+                    <li><a href="maridaje.html">Maridaje</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+    
+            <!--Social Media-->
+            <div class="gridFooter__divThree">
+                <p>Seguinos en nuestras redes sociales</p>
+                <div class="bg-link text-center">
+                    <a href="https://www.facebook.com/" target="_blank"><img
+                            src="https://img.icons8.com/fluency-systems-regular/000000/facebook.png" /></a>
+                    <a href="http://www.instagram.com/" target="_blank"><img
+                            src="https://img.icons8.com/fluency-systems-regular/000000/instagram-new.png" /></a>
+                </div>
+    
+            </div>
+        </section>
+    </footer>
+
+    <!--Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!--Javascript-->
+    <script src="../js/main.js"></script>
+</body>
+</html>
