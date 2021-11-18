@@ -265,7 +265,6 @@ const descuento15 = descuentoQuince (resultado);
 const descQuince = document.getElementById("totalQuince");
 
 
-
 //Mostrar el total al hacer click en el boton Total
 totalTotal.addEventListener('click', function(){
     precioTotal.innerHTML = `<img src="https://img.icons8.com/material-outlined/000000/shopping-cart--v1.png"/> Total de la compra: $ ${resultado}`;
