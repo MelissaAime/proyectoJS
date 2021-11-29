@@ -15,9 +15,11 @@ $(document).ready(function(){
     //funcion para cada subtotal:
     function mostrarTotal(cantidad, totalidad, subtotalidad, precio, nombreDeMemoria){
         if(cantidad.val() < 0){
+            totalidad.html('');
             totalidad.append(`Ingrese una cantidad válida`);
         }else{
             subtotalidad = cantidad.val() * precio;
+            totalidad.html('');
             totalidad.append(`<span> Total: $ </span> <b id="subtotal1"> ${subtotalidad}</b>`);
             sessionStorage.setItem(nombreDeMemoria, subtotalidad);
         }
@@ -178,11 +180,13 @@ $(document).ready(function(){
         const totalComboCuatro = parseInt(sessionStorage.getItem('stCombo4'))||0;  
         const resultado = total ((totalTinto), (totalBlanco), (totalRosado), (totalEspumante), (totalComboUno), (totalComboDos), (totalComboTres), (totalComboCuatro) );
 
+        $('#precioTotal').html('');
         $('#precioTotal').append(`<img src="https://img.icons8.com/material-outlined/000000/shopping-cart--v1.png"/> Total de la compra: $ ${resultado}`);
     
         const descuento15 = descuentoQuince (resultado); 
 
         if(resultado > 3000){
+            descQuince.html('');
             descQuince.append(`<img src="https://img.icons8.com/fluency-systems-regular/000000/discount.png"/> Total con descuento: $ ${descuento15}`);
         } 
 
