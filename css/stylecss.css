@@ -9,13 +9,6 @@ main {
 body {
   max-width: 100%; }
 
-div.subNav {
-  background-color: #fff;
-  width: 100%;
-  position: sticky;
-  font-size: 1.3rem;
-  margin-bottom: 1rem; }
-
 p#precioTotal {
   font-size: 1.2rem;
   margin-bottom: 0;
@@ -260,11 +253,6 @@ h1.titleProduc {
   font-family: "DM Serif Display", serif;
   text-shadow: 0.1em 0.1em 0.07em gray; }
 
-.cantVinos {
-  width: 6rem;
-  height: 2.3rem;
-  align-content: center; }
-
 .card-img-top {
   height: 220px; }
 
@@ -443,4 +431,7 @@ h1.titleProduc {
     height: 2rem; }
   div.accordion-item {
     font-size: 0.6rem;
-    height: auto; } }
+    height: auto; }
+  .btn.btn-outline {
+    font-size: 0.7rem;
+    width: 5rem; } }

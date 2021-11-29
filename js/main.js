@@ -1,195 +1,193 @@
 
-function mostrarTotal(cantidad, totalidad, subtotalidad, precio, nombreDeMemoria){
-    if(cantidad.value < 0){
-        totalidad.innerHTML= 'Ingrese una cantidad válida';
-    }else{
-        subtotalidad = cantidad.value*precio;
-        totalidad.innerHTML = `<span> Total: $ </span> <b id="subtotal1"> ${subtotalidad}</b>`;
-        sessionStorage.setItem(nombreDeMemoria, subtotalidad);
+$(document).ready(function(){
+
+    //Precios actuales:
+    const precioTinto = 450;
+    const precioBlanco = 350;
+    const precioRosado = 400;
+    const precioEspumante = 625;
+    const precioC1 = 750;
+    const precioC2 = 700;
+    const precioC3 = 1400;
+    const precioC4 = 1100;
+
+    
+    //funcion para cada subtotal:
+    function mostrarTotal(cantidad, totalidad, subtotalidad, precio, nombreDeMemoria){
+        if(cantidad.val() < 0){
+            totalidad.append(`Ingrese una cantidad válida`);
+        }else{
+            subtotalidad = cantidad.val() * precio;
+            totalidad.append(`<span> Total: $ </span> <b id="subtotal1"> ${subtotalidad}</b>`);
+            sessionStorage.setItem(nombreDeMemoria, subtotalidad);
+        }
     }
-}
+
+    //Tintos
+    const cantTintos = $('#cantVT');
+    const agregarCarritoTintos = $('#carritoVT');
+    const totalDeTintos = $('#totalTintos');
+    const subtotalTintos = cantTintos.val()*precioTinto;
+    const nombreDeMemoriaT = 'stTintos';
+
+    agregarCarritoTintos.click(function(){
+        mostrarTotal(cantTintos, totalDeTintos, subtotalTintos, precioTinto, nombreDeMemoriaT );
+    })
+    cantTintos.keypress(function(e){
+        if(e.which == 13){
+            mostrarTotal(cantTintos, totalDeTintos, subtotalTintos, precioTinto, nombreDeMemoriaT );
+        }
+    })
 
 
-//Card vino tinto
-const cantTintos = document.getElementById('cantVT');
-const agregarCarritoTintos = document.getElementById('carritoVT');
-const totalDeTintos = document.getElementById('totalTintos');
-let subtotalTintos = cantTintos.value*450;
-let nombreDeMemoriaT = 'stTintos';
+    //Blancos
+    const cantBlancos = $('#cantVB');
+    const agregarCarritoBlancos = $('#carritoVB');
+    const totalDeBlancos = $('#totalBlancos');
+    const subtotalBlancos = cantBlancos.val()*precioBlanco;
+    const nombreDeMemoriaB = 'stBlancos';
 
-//al hacer click
-agregarCarritoTintos.addEventListener('click', function(){
-    mostrarTotal(cantTintos, totalDeTintos, subtotalTintos, 450, nombreDeMemoriaT);
-})
+    agregarCarritoBlancos.click(function(){
+        mostrarTotal(cantBlancos, totalDeBlancos, subtotalBlancos, precioBlanco, nombreDeMemoriaB);
+    })
+    cantBlancos.keypress(function(e){
+        if(e.which == 13){
+            mostrarTotal(cantBlancos, totalDeBlancos, subtotalBlancos, precioBlanco, nombreDeMemoriaB);
+        }
+    })
 
-//al hacer enter
-cantTintos.addEventListener('keypress', function(e){
-    if(e.keyCode===13){
-        mostrarTotal(cantTintos, totalDeTintos, subtotalTintos, 450, nombreDeMemoriaT);
+    //Rosados
+    const cantRosados = $('#cantVR');
+    const agregarCarritoRosados = $('#carritoVR');
+    const totalDeRosados = $('#totalRosados');
+    const subtotalRosados = cantRosados.val()*precioRosado;
+    const nombreDeMemoriaR = 'stRosados';
+
+    agregarCarritoRosados.click(function(){
+        mostrarTotal(cantRosados,totalDeRosados, subtotalRosados, precioRosado, nombreDeMemoriaR);
+    })
+    cantRosados.keypress(function(e){
+        if(e.which == 13){
+            mostrarTotal(cantRosados,totalDeRosados, subtotalRosados, precioRosado, nombreDeMemoriaR);
+        }
+    })
+
+    //Espumante
+    const cantEspumante = $('#cantVE');
+    const agregarCarritoEspumantes = $('#carritoVE');
+    const totalDeEspumantes = $('#totalEspumantes');
+    const subtotalEspumantes = cantEspumante.val()*precioEspumante;
+    const nombreDeMemoriaE = 'stEspumantes';
+
+    agregarCarritoEspumantes.click(function(){
+        mostrarTotal(cantEspumante, totalDeEspumantes, subtotalEspumantes, precioEspumante, nombreDeMemoriaE);
+    })
+    cantEspumante.keypress(function(e){
+        if(e.which == 13){
+            mostrarTotal(cantEspumante, totalDeEspumantes, subtotalEspumantes, precioEspumante, nombreDeMemoriaE);
+        }
+    })
+
+    //Combo1
+    const cantCombo1 = $('#cantC1');
+    const agregarCarritoCombo1 = $('#carritoC1');
+    const totalCombo1 = $('#totalCombo1');
+    const subtotalCombo1 = cantCombo1.val()*precioC1;
+    const nombreDeMemoriaC1 = 'stCombo1';
+
+    agregarCarritoCombo1.click(function(){
+        mostrarTotal(cantCombo1, totalCombo1, subtotalCombo1, precioC1, nombreDeMemoriaC1);
+    })
+    cantCombo1.keypress(function(e){
+        if(e.which == 13){
+            mostrarTotal(cantCombo1, totalCombo1, subtotalCombo1, precioC1, nombreDeMemoriaC1);
+        }
+    })
+
+    //Combo2
+    const cantCombo2 = $('#cantC2');
+    const agregarCarritoCombo2 = $('#carritoC2');
+    const totalCombo2 = $('#totalCombo2');
+    const subtotalCombo2 = cantCombo2.val()*precioC2;
+    const nombreDeMemoriaC2 = 'stCombo2';
+
+    agregarCarritoCombo2.click(function(){
+        mostrarTotal(cantCombo2, totalCombo2, subtotalCombo2, precioC2, nombreDeMemoriaC2);
+    })
+    cantCombo2.keypress(function(e){
+        if(e.which == 13){
+            mostrarTotal(cantCombo2, totalCombo2, subtotalCombo2, precioC2, nombreDeMemoriaC2);
+        }
+    })
+
+    //Combo3
+    const cantCombo3 = $('#cantC3');
+    const agregarCarritoCombo3 = $('#carritoC3');
+    const totalCombo3 = $('#totalCombo3');
+    const subtotalCombo3 = cantCombo3.val()*precioC3;
+    const nombreDeMemoriaC3 = 'stCombo3';
+
+    agregarCarritoCombo3.click(function(){
+        mostrarTotal(cantCombo3, totalCombo3, subtotalCombo3, precioC3, nombreDeMemoriaC3);
+    })
+    cantCombo3.keypress(function(e){
+        if(e.which == 13){
+            mostrarTotal(cantCombo3, totalCombo3, subtotalCombo3, precioC3, nombreDeMemoriaC3);
+        }
+    })
+
+    //Combo4
+    const cantCombo4 = $('#cantC4');
+    const agregarCarritoCombo4 = $('#carritoC4');
+    const totalCombo4 = $('#totalCombo4');
+    const subtotalCombo4 = cantCombo4.val()*precioC4;
+    const nombreDeMemoriaC4 = 'stCombo4';
+
+    agregarCarritoCombo4.click(function(){
+        mostrarTotal(cantCombo4, totalCombo4, subtotalCombo4, precioC4, nombreDeMemoriaC4);
+    })
+    cantCombo4.keypress(function(e){
+        if(e.which == 13){
+            mostrarTotal(cantCombo4, totalCombo4, subtotalCombo4, precioC4, nombreDeMemoriaC4);
+        }
+    })
+
+
+
+    //TOTAL:
+    //Cantidad total
+    const totalTotal = $('#total');
+    function total(T, B, R, E, c1, c2, c3, c4) {
+        return (T+B+R+E+c1+c2+c3+c4);
     }
-})
-
-
-
-//Card vino blanco
-const cantBlancos = document.getElementById('cantVB');
-const agregarCarritoBlancos = document.getElementById('carritoVB');
-const totalDeBlancos = document.getElementById('totalBlancos');
-let subtotalBlancos = cantBlancos.value*350;
-let nombreDeMemoriaB = 'stBlancos';
-
-agregarCarritoBlancos.addEventListener('click', function(){
-    mostrarTotal(cantBlancos, totalDeBlancos, subtotalBlancos, 350,  nombreDeMemoriaB);
-})
-cantBlancos.addEventListener('keypress', function(e){
-    if(e.keyCode===13){
-        mostrarTotal(cantBlancos, totalDeBlancos, subtotalBlancos, 350,  nombreDeMemoriaB);
+    //Descuento
+    const descQuince = $('#totalQuince');
+    function descuentoQuince (resultado){
+        return (resultado*0.85);
     }
+
+    //Mostrar el total al hacer click
+    totalTotal.click(function(){
+        const totalTinto = parseInt(sessionStorage.getItem('stTintos'))||0;
+        const totalBlanco = parseInt(sessionStorage.getItem('stBlancos'))||0;
+        const totalRosado = parseInt(sessionStorage.getItem('stRosados'))||0;
+        const totalEspumante = parseInt(sessionStorage.getItem('stEspumantes'))||0;
+        const totalComboUno = parseInt(sessionStorage.getItem('stCombo1'))||0;
+        const totalComboDos = parseInt(sessionStorage.getItem('stCombo2'))||0;
+        const totalComboTres = parseInt(sessionStorage.getItem('stCombo3'))||0;
+        const totalComboCuatro = parseInt(sessionStorage.getItem('stCombo4'))||0;  
+        const resultado = total ((totalTinto), (totalBlanco), (totalRosado), (totalEspumante), (totalComboUno), (totalComboDos), (totalComboTres), (totalComboCuatro) );
+
+        $('#precioTotal').append(`<img src="https://img.icons8.com/material-outlined/000000/shopping-cart--v1.png"/> Total de la compra: $ ${resultado}`);
+    
+        const descuento15 = descuentoQuince (resultado); 
+
+        if(resultado > 3000){
+            descQuince.append(`<img src="https://img.icons8.com/fluency-systems-regular/000000/discount.png"/> Total con descuento: $ ${descuento15}`);
+        } 
+
+        //Borrar los valores luego de hacer click
+        sessionStorage.clear();
+    })
+
 })
-
-
-
-//Card vino rosado
-const cantRosados = document.getElementById('cantVR');
-const agregarCarritoRosados = document.getElementById('carritoVR');
-const totalDeRosados = document.getElementById('totalRosados');
-let subtotalRosados = cantRosados.value*400;
-let nombreDeMemoriaR = 'stRosados';
-
-agregarCarritoRosados.addEventListener('click', function(){
-    mostrarTotal(cantRosados, totalDeRosados, subtotalRosados, 400,  nombreDeMemoriaR);
-})
-cantRosados.addEventListener('keypress', function(e){
-    if(e.keyCode===13){
-        mostrarTotal(cantRosados, totalDeRosados, subtotalRosados, 400,  nombreDeMemoriaR);
-    }
-})
-
-
-
-//Card vino espumante
-const cantEspumante = document.getElementById('cantVE');
-const agregarCarritoEspumantes = document.getElementById('carritoVE');
-const totalDeEspumantes = document.getElementById('totalEspumantes');
-let subtotalEspumantes = cantEspumante.value*625;
-let nombreDeMemoriaE = 'stEspumantes'
-
-agregarCarritoEspumantes.addEventListener('click', function(){
-    mostrarTotal(cantEspumante, totalDeEspumantes, subtotalEspumantes, 600, nombreDeMemoriaE);
-})
-cantEspumante.addEventListener('keypress', function(e){
-    if(e.keyCode===13){
-        mostrarTotal(cantEspumante, totalDeEspumantes, subtotalEspumantes, 600, nombreDeMemoriaE);
-    }
-})
-
-
-
-//Card combo 1
-const cantCombo1 = document.getElementById('cantC1');
-const agregarCarritoCombo1 = document.getElementById('carritoC1');
-const totalCombo1 = document.getElementById('totalCombo1');
-let subtotalCombo1 = cantCombo1.value*750;
-let nombreDeMemoriaC1 = 'stCombo1'
-
-agregarCarritoCombo1.addEventListener('click', function(){
-    mostrarTotal(cantCombo1, totalCombo1, subtotalCombo1, 750, nombreDeMemoriaC1);
-})
-cantCombo1.addEventListener('keypress', function(e){
-    if(e.keyCode===13){
-        mostrarTotal(cantCombo1, totalCombo1, subtotalCombo1, 750, nombreDeMemoriaC1);
-    }
-})
-
-
-
-//Card combo 2
-const cantCombo2 = document.getElementById('cantC2');
-const agregarCarritoCombo2 = document.getElementById('carritoC2');
-const totalCombo2 = document.getElementById('totalCombo2');
-let subtotalCombo2 = cantCombo2.value*700;
-let nombreDeMemoriaC2 = 'stCombo2';
-
-agregarCarritoCombo2.addEventListener('click', function(){
-    mostrarTotal(cantCombo2, totalCombo2, subtotalCombo2, 700, nombreDeMemoriaC2);
-})
-cantCombo2.addEventListener('keypress', function(e){
-    if(e.keyCode===13){
-        mostrarTotal(cantCombo2, totalCombo2, subtotalCombo2, 700, nombreDeMemoriaC2);
-    }
-})
-
-
-
-//Card combo 3
-const cantCombo3 = document.getElementById('cantC3');
-const agregarCarritoCombo3 = document.getElementById('carritoC3');
-const totalCombo3 = document.getElementById('totalCombo3');
-let subtotalCombo3 = cantCombo3.value*1400;
-let nombreDeMemoriaC3 = 'stCombo3';
-
-agregarCarritoCombo3.addEventListener('click', function(){
-    mostrarTotal(cantCombo3, totalCombo3, subtotalCombo3, 1400, nombreDeMemoriaC3);
-})
-cantCombo3.addEventListener('keypress', function(e){
-    if(e.keyCode===13){
-        mostrarTotal(cantCombo3, totalCombo3, subtotalCombo3, 1400, nombreDeMemoriaC3);
-    }
-})
-
-
-
-//Card combo 4
-let cantCombo4 = document.getElementById('cantC4');
-let agregarCarritoCombo4 = document.getElementById('carritoC4');
-let totalCombo4 = document.getElementById('totalCombo4');
-let subtotalCombo4 = cantCombo4.value*1100;
-let nombreDeMemoriaC4 = 'stCombo4'
-
-agregarCarritoCombo4.addEventListener('click', function(){
-    mostrarTotal(cantCombo4, totalCombo4, subtotalCombo4, 1100, nombreDeMemoriaC4);
-})
-cantCombo4.addEventListener('keypress', function(e){
-    if(e.keyCode===13){
-        mostrarTotal(cantCombo4, totalCombo4, subtotalCombo4, 1100, nombreDeMemoriaC4);
-    }
-})
-
-
-//Cantidad total
-const totalTotal = document.getElementById("total");
-function total(T, B, R, E, c1, c2, c3, c4) {
-    return (T+B+R+E+c1+c2+c3+c4);
-}
-
-//Descuento
-const descQuince = document.getElementById("totalQuince");
-function descuentoQuince (resultado){
-    return (resultado*0.85);
-}
-
-//Mostrar el total al hacer click
-totalTotal.addEventListener('click', function(){
-    const totalTinto = parseInt(sessionStorage.getItem('stTintos'))||0;
-    const totalBlanco = parseInt(sessionStorage.getItem('stBlancos'))||0;
-    const totalRosado = parseInt(sessionStorage.getItem('stRosados'))||0;
-    const totalEspumante = parseInt(sessionStorage.getItem('stEspumantes'))||0;
-    const totalComboUno = parseInt(sessionStorage.getItem('stCombo1'))||0;
-    const totalComboDos = parseInt(sessionStorage.getItem('stCombo2'))||0;
-    const totalComboTres = parseInt(sessionStorage.getItem('stCombo3'))||0;
-    const totalComboCuatro = parseInt(sessionStorage.getItem('stCombo4'))||0;  
-    const resultado = total ((totalTinto), (totalBlanco), (totalRosado), (totalEspumante), (totalComboUno), (totalComboDos), (totalComboTres), (totalComboCuatro) );
-
-    const precioTotal = document.getElementById("precioTotal");
-    precioTotal.innerHTML = `<img src="https://img.icons8.com/material-outlined/000000/shopping-cart--v1.png"/> Total de la compra: $ ${resultado}`;
-   
-    const descuento15 = descuentoQuince (resultado); 
-
-    if(resultado > 3000){
-        descQuince.innerHTML = `<img src="https://img.icons8.com/fluency-systems-regular/000000/discount.png"/> Total con descuento: $ ${descuento15}`;
-    } 
-
-    //Borrar los valores luego de hacer click
-    sessionStorage.clear();
-})
-
