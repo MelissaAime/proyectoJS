@@ -23,15 +23,48 @@ body {
 p#precioTotal{
   font-size: 1.2rem;
   margin-bottom: 0;
+  margin-left: 1rem;
   padding: 0.5rem;
 }
 p#totalQuince{
   font-size: 1.2rem;
   margin-bottom: 0;
+  margin-left: 1rem;
   padding: 0.5rem;
 }
+button#total{
+  width: 8rem;
+  margin: 0.5rem;
+  margin-left: 45%;
+}
+div#subNav{
+  width: 50%;
+  margin-left: 25%;
+  height: auto;
+  border-radius: 0.25rem;
+}
+button#estiloBotonOcultar.btn.btn-outline-secondary{
+  justify-self: end;
+  margin: 0.5rem;
+  height: 2rem;
+  font-size: 0.7rem;
+}
 
-
+//Cartelito de aviso
+div#toast{
+  position:fixed;
+  width: 16rem;
+  min-height: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.712);
+  top: 15%;
+  right:3%; 
+  z-index: 100;
+  display: none;
+  justify-content: center; 
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px  1px rgba(0,0,0,0.35)
+}
 
 //Navbar
 .navbar {

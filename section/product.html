@@ -78,6 +78,9 @@
     <!--Main-->
     <main>
 
+        <!--Cartelito de aviso-->
+        <div id="toast"></div>
+
         <!--Carousel-->
         <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -252,10 +255,11 @@
         </div>
     
         <!--Mostrar Total-->
-        <div class="subNav">
-            <button class="btn btn-outline-secondary" id="total">Total:</button>
+        <button class="btn btn-outline-secondary" id="total">Mostrar total:</button>
+        <div id="subNav">
             <p id="precioTotal"></p>
             <p id="totalQuince"></p>
+            <div id="botonOcultar"><button class="btn btn-outline-secondary" id="estiloBotonOcultar">Ocultar total</button></div>
         </div>
 
     </main>

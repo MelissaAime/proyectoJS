@@ -10,17 +10,33 @@ $(document).ready(function(){
     const precioC2 = 700;
     const precioC3 = 1400;
     const precioC4 = 1100;
+    const descuentoAPartirDe = 3000;
 
     
-    //funcion para cada subtotal:
+    //Funcion para cada subtotal:
     function mostrarTotal(cantidad, totalidad, subtotalidad, precio, nombreDeMemoria){
         if(cantidad.val() < 0){
             totalidad.html('');
             totalidad.append(`Ingrese una cantidad válida`);
+
+            //Animacion
+            totalidad.fadeIn().delay(1000).fadeOut();
         }else{
+            //Mostrar el subtotal
             subtotalidad = cantidad.val() * precio;
             totalidad.html('');
             totalidad.append(`<span> Total: $ </span> <b id="subtotal1"> ${subtotalidad}</b>`);
+
+            //Mostrar cartel si la cant es mayor a cero
+            if (cantidad.val()>0){
+                $('#toast').html('Se agregó un elemento al carrito');
+                $('#toast').fadeIn(500).delay(1000).fadeOut(2000);
+            }
+
+            //Animacion
+            totalidad.fadeIn().delay(1000).fadeOut();
+
+            //Guardar en memoria
             sessionStorage.setItem(nombreDeMemoria, subtotalidad);
         }
     }
@@ -159,6 +175,7 @@ $(document).ready(function(){
     //TOTAL:
     //Cantidad total
     const totalTotal = $('#total');
+
     function total(T, B, R, E, c1, c2, c3, c4) {
         return (T+B+R+E+c1+c2+c3+c4);
     }
@@ -168,8 +185,24 @@ $(document).ready(function(){
         return (resultado*0.85);
     }
 
+    $('#botonOcultar').hide();
+
     //Mostrar el total al hacer click
     totalTotal.click(function(){
+        $('#subNav').css("background-color", "white");
+        $('#subNav').show();
+        $('#total').html('');
+        $('#total').append(`<div>Actualizar:</div>`);
+
+
+        $('#botonOcultar').show();
+        $('#botonOcultar').click(function(){
+
+            $('#subNav').hide();
+            $('#total').html('');
+            $('#total').append(`<div id="total">Mostrar total:</div>`);
+        })
+
         const totalTinto = parseInt(sessionStorage.getItem('stTintos'))||0;
         const totalBlanco = parseInt(sessionStorage.getItem('stBlancos'))||0;
         const totalRosado = parseInt(sessionStorage.getItem('stRosados'))||0;
@@ -178,19 +211,33 @@ $(document).ready(function(){
         const totalComboDos = parseInt(sessionStorage.getItem('stCombo2'))||0;
         const totalComboTres = parseInt(sessionStorage.getItem('stCombo3'))||0;
         const totalComboCuatro = parseInt(sessionStorage.getItem('stCombo4'))||0;  
+
         const resultado = total ((totalTinto), (totalBlanco), (totalRosado), (totalEspumante), (totalComboUno), (totalComboDos), (totalComboTres), (totalComboCuatro) );
 
         $('#precioTotal').html('');
-        $('#precioTotal').append(`<img src="https://img.icons8.com/material-outlined/000000/shopping-cart--v1.png"/> Total de la compra: $ ${resultado}`);
+        $('#precioTotal').append(`<div><img src="https://img.icons8.com/material-outlined/000000/shopping-cart--v1.png"/> Total de la compra: $ ${resultado}</div>`);
     
         const descuento15 = descuentoQuince (resultado); 
 
-        if(resultado > 3000){
+        if(resultado > descuentoAPartirDe){
             descQuince.html('');
-            descQuince.append(`<img src="https://img.icons8.com/fluency-systems-regular/000000/discount.png"/> Total con descuento: $ ${descuento15}`);
-        } 
+            descQuince.append(`<div><img src="https://img.icons8.com/fluency-systems-regular/000000/discount.png"/> Total con descuento: $ ${descuento15}</div>`);
+        } else{
+            descQuince.html('')
+        }
+
 
         //Borrar los valores luego de hacer click
+        totalDeTintos.html('');
+        totalDeBlancos.html('');
+        totalDeRosados.html('');
+        totalDeEspumantes.html('');
+        totalCombo1.html('');
+        totalCombo2.html('');
+        totalCombo3.html('');
+        totalCombo4.html('');
+        
+        //Borrar el session storage
         sessionStorage.clear();
     })
 
