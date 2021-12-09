@@ -252,7 +252,7 @@ $(document).ready(function(){
     //     $.getJSON('../productos.json', function(respuesta, status){
     //         if(status === 'success'){
     //             respuesta.forEach((productos=>{
-    //                 if(`${productos.id}`== this.id){
+    //                 if(`${productos.id}`== id){
     //                     lugar.html('');
     //                     lugar.append(`Descripcion del producto: ${productos.descripcion}`);
     //                     lugar.fadeIn().delay(5000).fadeOut();
@@ -262,8 +262,8 @@ $(document).ready(function(){
     //     })
     // }
 
-    // const lugar = $('#mostrarDescripT');
-    // $('#descripT').click(verDescrip(1, lugar ));
+    // const lugarDesc = $('#mostrarDescripT');
+    // $('#descripT').click(verDescrip(1, lugarDesc));
 
     $('#descripT').click(function(){
         $.getJSON('../productos.json', function(respuesta, status){
