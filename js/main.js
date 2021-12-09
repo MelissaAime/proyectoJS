@@ -241,4 +241,142 @@ $(document).ready(function(){
         sessionStorage.clear();
     })
 
+
+
+
+    //Descripcion de cada producto:
+
+    //No funciona:
+
+    // function verDescrip(id, lugar){
+    //     $.getJSON('../productos.json', function(respuesta, status){
+    //         if(status === 'success'){
+    //             respuesta.forEach((productos=>{
+    //                 if(`${productos.id}`== this.id){
+    //                     lugar.html('');
+    //                     lugar.append(`Descripcion del producto: ${productos.descripcion}`);
+    //                     lugar.fadeIn().delay(5000).fadeOut();
+    //                 } 
+    //             }))
+    //         }
+    //     })
+    // }
+
+    // const lugar = $('#mostrarDescripT');
+    // $('#descripT').click(verDescrip(1, lugar ));
+
+    $('#descripT').click(function(){
+        $.getJSON('../productos.json', function(respuesta, status){
+            if(status === 'success'){
+                respuesta.forEach((productos=>{
+                    if(`${productos.id}`=== '1'){
+                        $('#mostrarDescripT').html('');
+                        $('#mostrarDescripT').append(`Descripcion del producto: ${productos.descripcion}`);
+                        $('#mostrarDescripT').fadeIn().delay(5000).fadeOut();
+                    } 
+                }))
+            }
+        })
+    })
+
+    $('#descripB').click(function(){
+        $.getJSON('../productos.json', function(respuesta, status){
+            if(status === 'success'){
+                respuesta.forEach((productos=>{
+                    if(`${productos.id}`=== '2'){
+                        $('#mostrarDescripB').html('');
+                        $('#mostrarDescripB').append(`Descripcion del producto: ${productos.descripcion}`);
+                        $('#mostrarDescripB').fadeIn().delay(5000).fadeOut();
+                    } 
+                }))
+            }
+        })
+    })
+
+    $('#descripR').click(function(){
+        $.getJSON('../productos.json', function(respuesta, status){
+            if(status === 'success'){
+                respuesta.forEach((productos=>{
+                    if(`${productos.id}`=== '3'){
+                        $('#mostrarDescripR').html('');
+                        $('#mostrarDescripR').append(`Descripcion del producto: ${productos.descripcion}`);
+                        $('#mostrarDescripR').fadeIn().delay(5000).fadeOut();
+                    } 
+                }))
+            }
+        })
+    })
+
+    $('#descripE').click(function(){
+        $.getJSON('../productos.json', function(respuesta, status){
+            if(status === 'success'){
+                respuesta.forEach((productos=>{
+                    if(`${productos.id}`=== '4'){
+                        $('#mostrarDescripE').html('');
+                        $('#mostrarDescripE').append(`Descripcion del producto: ${productos.descripcion}`);
+                        $('#mostrarDescripE').fadeIn().delay(5000).fadeOut();
+                    } 
+                }))
+            }
+        })
+    })
+
+    $('#descripC1').click(function(){
+        $.getJSON('../productos.json', function(respuesta, status){
+            if(status === 'success'){
+                respuesta.forEach((productos=>{
+                    if(`${productos.id}`=== '5'){
+                        $('#mostrarDescripC1').html('');
+                        $('#mostrarDescripC1').append(`Descripcion del producto: ${productos.descripcion}`);
+                        $('#mostrarDescripC1').fadeIn().delay(5000).fadeOut();
+                    } 
+                }))
+            }
+        })
+    })
+
+    $('#descripC2').click(function(){
+        $.getJSON('../productos.json', function(respuesta, status){
+            if(status === 'success'){
+                respuesta.forEach((productos=>{
+                    if(`${productos.id}`=== '6'){
+                        $('#mostrarDescripC2').html('');
+                        $('#mostrarDescripC2').append(`Descripcion del producto: ${productos.descripcion}`);
+                        $('#mostrarDescripC2').fadeIn().delay(5000).fadeOut();
+                    } 
+                }))
+            }
+        })
+    })
+
+    $('#descripC3').click(function(){
+        $.getJSON('../productos.json', function(respuesta, status){
+            if(status === 'success'){
+                respuesta.forEach((productos=>{
+                    if(`${productos.id}`=== '7'){
+                        $('#mostrarDescripC3').html('');
+                        $('#mostrarDescripC3').append(`Descripcion del producto: ${productos.descripcion}`);
+                        $('#mostrarDescripC3').fadeIn().delay(5000).fadeOut();
+                    } 
+                }))
+            }
+        })
+    })
+
+    $('#descripC4').click(function(){
+        $.getJSON('../productos.json', function(respuesta, status){
+            if(status === 'success'){
+                respuesta.forEach((productos=>{
+                    if(`${productos.id}`=== '8'){
+                        $('#mostrarDescripC4').html('');
+                        $('#mostrarDescripC4').append(`Descripcion del producto: ${productos.descripcion}`);
+                        $('#mostrarDescripC4').fadeIn().delay(5000).fadeOut();
+                    } 
+                }))
+            }
+        })
+    })
+
+
+//Fin del ready
 })

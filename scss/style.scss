@@ -38,7 +38,8 @@ button#total{
   margin-left: 45%;
 }
 div#subNav{
-  width: 50%;
+  position: fixed;
+  width: 50rem;
   margin-left: 25%;
   height: auto;
   border-radius: 0.25rem;
