@@ -186,17 +186,18 @@ $(document).ready(function(){
     }
 
     $('#botonOcultar').hide();
+    $('#finalizarCompra').hide();
 
     //Mostrar el total al hacer click
     totalTotal.click(function(){
         $('#subNav').css("background-color", "white");
         $('#subNav').show();
-        $('#total').html('');
-        $('#total').append(`<div>Actualizar:</div>`);
+        $('#total').hide();
+        $('#botonTerminar').append(`<div id="finCompra"><button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Finalizar compra:</button></div>`);
 
 
         $('#botonOcultar').show();
-        $('#botonOcultar').click(function(){
+        $('#estiloBotonOcultar').click(function(){
 
             $('#subNav').hide();
             $('#total').html('');
@@ -226,7 +227,20 @@ $(document).ready(function(){
             descQuince.html('')
         }
 
+        
+        //Finalizar compra:
+        $('#finCompra').click(function(){
+            $('#finalizarCompra').show();
 
+        })
+
+        //Comprar:
+        $('#compraFinalizada').click(function(){
+            $('.modal-content').append(`<div>Compra realizada con exito</div>`);
+        })
+        
+
+        
         //Borrar los valores luego de hacer click
         totalDeTintos.html('');
         totalDeBlancos.html('');
@@ -242,6 +256,7 @@ $(document).ready(function(){
     })
 
 
+    
 
 
     //Descripcion de cada producto:
