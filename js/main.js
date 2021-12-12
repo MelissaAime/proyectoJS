@@ -17,7 +17,7 @@ $(document).ready(function(){
     function mostrarTotal(cantidad, totalidad, subtotalidad, precio, nombreDeMemoria){
         if(cantidad.val() < 0){
             totalidad.html('');
-            totalidad.append(`Ingrese una cantidad válida`);
+            totalidad.append(`Ingrese una cantidad válida`).css("color","red");
 
             //Animacion
             totalidad.fadeIn().delay(1000).fadeOut();
