@@ -174,12 +174,10 @@ $(document).ready(function(){
 
     //TOTAL:
     //Cantidad total
-    const totalTotal = $('#total');
-
     function total(T, B, R, E, c1, c2, c3, c4) {
         return (T+B+R+E+c1+c2+c3+c4);
     }
-    //Descuento
+    //Total con descuento
     const descQuince = $('#totalQuince');
     function descuentoQuince (resultado){
         return (resultado*0.85);
@@ -187,8 +185,10 @@ $(document).ready(function(){
 
     $('#botonOcultar').hide();
     $('#finalizarCompra').hide();
+    $('#comprado').hide();
 
-    //Mostrar el total al hacer click
+    //Boton Mostrar total
+    const totalTotal = $('#total');
     totalTotal.click(function(){
         $('#subNav').css("background-color", "white");
         $('#subNav').show();
@@ -197,13 +197,19 @@ $(document).ready(function(){
 
 
         $('#botonOcultar').show();
-        $('#estiloBotonOcultar').click(function(){
 
-            $('#subNav').hide();
-            $('#total').html('');
-            $('#total').append(`<div id="total">Mostrar total:</div>`);
-        })
+            //Boton Vaciar carrito:
+            $('#estiloBotonOcultar').click(function(){
 
+                $('#subNav').hide();
+                $('#finCompra').hide();
+                $('#botonTerminar').show();
+                $('#total').show();
+                $('#total').html('');
+                $('#total').append(`<div id="total">Mostrar total:</div>`);
+            })
+
+        //Cantidad que se selecciona
         const totalTinto = parseInt(sessionStorage.getItem('stTintos'))||0;
         const totalBlanco = parseInt(sessionStorage.getItem('stBlancos'))||0;
         const totalRosado = parseInt(sessionStorage.getItem('stRosados'))||0;
@@ -213,6 +219,7 @@ $(document).ready(function(){
         const totalComboTres = parseInt(sessionStorage.getItem('stCombo3'))||0;
         const totalComboCuatro = parseInt(sessionStorage.getItem('stCombo4'))||0;  
 
+        //Resultado: precio total
         const resultado = total ((totalTinto), (totalBlanco), (totalRosado), (totalEspumante), (totalComboUno), (totalComboDos), (totalComboTres), (totalComboCuatro) );
 
         $('#precioTotal').html('');
@@ -220,6 +227,7 @@ $(document).ready(function(){
     
         const descuento15 = descuentoQuince (resultado); 
 
+        //Ver si aplica el descuento o no
         if(resultado > descuentoAPartirDe){
             descQuince.html('');
             descQuince.append(`<div><img src="https://img.icons8.com/fluency-systems-regular/000000/discount.png"/> Total con descuento: $ ${descuento15}</div>`);
@@ -231,15 +239,57 @@ $(document).ready(function(){
         //Finalizar compra:
         $('#finCompra').click(function(){
             $('#finalizarCompra').show();
+            
+            function resumenDeCompra(totalAValidar, cant, agregarcant, precio, agregarprecio, borrar){
+                if (totalAValidar > 0){
+                    cant.append(`${agregarcant}`);
+                    precio.append(`${agregarprecio}`);
+                } else{
+                    borrar.hide();
+                }
+            }
 
-        })
+            resumenDeCompra(totalTinto, $('#cantP1'), cantTintos.val(), $('#precioP1'), totalTinto, $('#tinto'));
+            resumenDeCompra(totalBlanco, $('#cantP2'), cantBlancos.val(), $('#precioP2'), totalBlanco, $('#blanco'));
+            resumenDeCompra(totalRosado, $('#cantP3'), cantRosados.val(), $('#precioP3'), totalRosado, $('#rosado'));
+            resumenDeCompra(totalEspumante, $('#cantP4'), cantEspumante.val(), $('#precioP4'), totalEspumante, $('#espumante'));
+            resumenDeCompra(totalComboUno, $('#cantP5'), cantCombo1.val(), $('#precioP5'), totalComboUno, $('#combouno'));
+            resumenDeCompra(totalComboDos, $('#cantP6'), cantCombo2.val(), $('#precioP6'), totalComboDos, $('#combodos'));
+            resumenDeCompra(totalComboTres, $('#cantP7'), cantCombo3.val(), $('#precioP7'), totalComboTres, $('#combotres'));
+            resumenDeCompra(totalComboCuatro, $('#cantP8'), cantCombo4.val(), $('#precioP8'), totalComboCuatro, $('#combocuatro'));
 
-        //Comprar:
-        $('#compraFinalizada').click(function(){
-            $('.modal-content').append(`<div>Compra realizada con exito</div>`);
-        })
+            $('#totalFinal').append(resultado);
+
+            if(resultado > descuentoAPartirDe){
+                $('#totalAPagar').append(descuento15);
+               
+            } else{
+                $('#totalConDescuento').hide();
+            }
+
         
+            //Boton Comprar deshabilitado
+            if (resultado <= 0){
+                $('#compraFinalizada').prop('disabled', true);
+            }
+            
+        })
 
+            //Comprar:
+            $('#compraFinalizada').click(function(){
+                $('.modal-title').html('');
+                $('.modal-title').prepend('Compra realizada con éxito');
+                $('#compraFinalizada').hide();
+                $('#cerrar').html('');
+                $('#cerrar').append('<p id="cerrarCompra">Cerrar</p>');
+
+                    //Boton Cerrar: recargar página
+                    $('#cerrarCompra').click(function(){
+                        location.reload();
+                    })
+
+            })
+        
         
         //Borrar los valores luego de hacer click
         totalDeTintos.html('');
@@ -255,142 +305,6 @@ $(document).ready(function(){
         sessionStorage.clear();
     })
 
-
-    
-
-
-    //Descripcion de cada producto:
-
-    //No funciona:
-
-    // function verDescrip(id, lugar){
-    //     $.getJSON('../productos.json', function(respuesta, status){
-    //         if(status === 'success'){
-    //             respuesta.forEach((productos=>{
-    //                 if(`${productos.id}`== id){
-    //                     lugar.html('');
-    //                     lugar.append(`Descripcion del producto: ${productos.descripcion}`);
-    //                     lugar.fadeIn().delay(5000).fadeOut();
-    //                 } 
-    //             }))
-    //         }
-    //     })
-    // }
-
-    // const lugarDesc = $('#mostrarDescripT');
-    // $('#descripT').click(verDescrip(1, lugarDesc));
-
-    $('#descripT').click(function(){
-        $.getJSON('../productos.json', function(respuesta, status){
-            if(status === 'success'){
-                respuesta.forEach((productos=>{
-                    if(`${productos.id}`=== '1'){
-                        $('#mostrarDescripT').html('');
-                        $('#mostrarDescripT').append(`Descripcion del producto: ${productos.descripcion}`);
-                        $('#mostrarDescripT').fadeIn().delay(5000).fadeOut();
-                    } 
-                }))
-            }
-        })
-    })
-
-    $('#descripB').click(function(){
-        $.getJSON('../productos.json', function(respuesta, status){
-            if(status === 'success'){
-                respuesta.forEach((productos=>{
-                    if(`${productos.id}`=== '2'){
-                        $('#mostrarDescripB').html('');
-                        $('#mostrarDescripB').append(`Descripcion del producto: ${productos.descripcion}`);
-                        $('#mostrarDescripB').fadeIn().delay(5000).fadeOut();
-                    } 
-                }))
-            }
-        })
-    })
-
-    $('#descripR').click(function(){
-        $.getJSON('../productos.json', function(respuesta, status){
-            if(status === 'success'){
-                respuesta.forEach((productos=>{
-                    if(`${productos.id}`=== '3'){
-                        $('#mostrarDescripR').html('');
-                        $('#mostrarDescripR').append(`Descripcion del producto: ${productos.descripcion}`);
-                        $('#mostrarDescripR').fadeIn().delay(5000).fadeOut();
-                    } 
-                }))
-            }
-        })
-    })
-
-    $('#descripE').click(function(){
-        $.getJSON('../productos.json', function(respuesta, status){
-            if(status === 'success'){
-                respuesta.forEach((productos=>{
-                    if(`${productos.id}`=== '4'){
-                        $('#mostrarDescripE').html('');
-                        $('#mostrarDescripE').append(`Descripcion del producto: ${productos.descripcion}`);
-                        $('#mostrarDescripE').fadeIn().delay(5000).fadeOut();
-                    } 
-                }))
-            }
-        })
-    })
-
-    $('#descripC1').click(function(){
-        $.getJSON('../productos.json', function(respuesta, status){
-            if(status === 'success'){
-                respuesta.forEach((productos=>{
-                    if(`${productos.id}`=== '5'){
-                        $('#mostrarDescripC1').html('');
-                        $('#mostrarDescripC1').append(`Descripcion del producto: ${productos.descripcion}`);
-                        $('#mostrarDescripC1').fadeIn().delay(5000).fadeOut();
-                    } 
-                }))
-            }
-        })
-    })
-
-    $('#descripC2').click(function(){
-        $.getJSON('../productos.json', function(respuesta, status){
-            if(status === 'success'){
-                respuesta.forEach((productos=>{
-                    if(`${productos.id}`=== '6'){
-                        $('#mostrarDescripC2').html('');
-                        $('#mostrarDescripC2').append(`Descripcion del producto: ${productos.descripcion}`);
-                        $('#mostrarDescripC2').fadeIn().delay(5000).fadeOut();
-                    } 
-                }))
-            }
-        })
-    })
-
-    $('#descripC3').click(function(){
-        $.getJSON('../productos.json', function(respuesta, status){
-            if(status === 'success'){
-                respuesta.forEach((productos=>{
-                    if(`${productos.id}`=== '7'){
-                        $('#mostrarDescripC3').html('');
-                        $('#mostrarDescripC3').append(`Descripcion del producto: ${productos.descripcion}`);
-                        $('#mostrarDescripC3').fadeIn().delay(5000).fadeOut();
-                    } 
-                }))
-            }
-        })
-    })
-
-    $('#descripC4').click(function(){
-        $.getJSON('../productos.json', function(respuesta, status){
-            if(status === 'success'){
-                respuesta.forEach((productos=>{
-                    if(`${productos.id}`=== '8'){
-                        $('#mostrarDescripC4').html('');
-                        $('#mostrarDescripC4').append(`Descripcion del producto: ${productos.descripcion}`);
-                        $('#mostrarDescripC4').fadeIn().delay(5000).fadeOut();
-                    } 
-                }))
-            }
-        })
-    })
 
 
 //Fin del ready

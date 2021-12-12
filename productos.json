@@ -1,42 +1,42 @@
 [
     {"id": 1,
     "nombre": "vino Tinto",
-    "descripcion": "Es un vino oscuro...",
+    "descripcion": "Posee aromas y sabores a frutilla, frambuesas y sutiles notas de chocolate negro. Delicado y equilibrado en el paladar. Ideal para acompañar comidas livianas y postres.",
     "precio": "$450"
     },
     {"id": 2,
     "nombre": "vino Blanco",
-    "descripcion": "Es un vino dulce...",
+    "descripcion": "Presenta exquisitos aromas a manzana verde, ananá y banana. Es refrescante y de equilibrda acidez. Ideal para acompañar pescados y carnes blancas.",
     "precio": "$350"
     },
     {"id": 3,
     "nombre": "vino Rosado",
-    "descripcion": "Es un vino bla bla...",
+    "descripcion": "Vino joven, de color rosa pálido. Se descubren aromas florales, típicos del varietal que le da origen al vino. Presenta un equilibrio perfecto entre dulzor y acidez.",
     "precio": "$400"
     },
     {"id": 4,
     "nombre": "vino Espumante",
-    "descripcion": "Es un vino ...",
+    "descripcion": "Es un extra brut fresco, con un color dorado claro con leves tonos verdosos, burbujas finas e intensar, con delicadas notas frutales y cítricas. Fresco y de excelente equilibrio.",
     "precio": "$625"
     },
     {"id": 5,
     "nombre": "combo 1",
-    "descripcion": "Combo ideal: vino tinto y vino blanco",
+    "descripcion": "Combo clásico: este combo incluye un vino Tinto y un vino Blanco ",
     "precio": "$750"
     },
     {"id": 6,
     "nombre": "combo 2",
-    "descripcion": "El combo más dulce: vino blanco y vino rosado",
+    "descripcion": "El combo más dulce: incluye un vino Blanco y un vino Rosado",
     "precio": "$700"
     },
     {"id": 7,
     "nombre": "combo 3",
-    "descripcion": "Combo romantico: ideal para esa cena romantica",
+    "descripcion": "Este combo es ideal para acompañar una cena romántica. Contiene un vino Espumante 'La Bodega' junto con dos copas de cristal.",
     "precio": "$1400"
     },
     {"id": 8,
     "nombre": "combo 4",
-    "descripcion": "Combo para todos los gustos.",
+    "descripcion": "Combo para todos los gustos: incluye un vino Tinto, un vino Blanco y un vino Rosado. Con la compra de este combo te regalamos una copa de regalo.",
     "precio": "$1100"
     }
 ]
