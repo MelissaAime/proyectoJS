@@ -28,7 +28,7 @@ $(document).ready(function(){
                     if(`${productos.id}`=== '1'){
                         $('#mostrarDescripT').html('');
                         $('#mostrarDescripT').append(`${productos.descripcion}`);
-                        $('#mostrarDescripT').fadeIn().delay(5000).fadeOut();
+                        $('#mostrarDescripT').fadeIn().delay(5000).fadeOut(2000);
                     } 
                 }))
             }
@@ -42,7 +42,7 @@ $(document).ready(function(){
                     if(`${productos.id}`=== '2'){
                         $('#mostrarDescripB').html('');
                         $('#mostrarDescripB').append(`${productos.descripcion}`);
-                        $('#mostrarDescripB').fadeIn().delay(5000).fadeOut();
+                        $('#mostrarDescripB').fadeIn().delay(5000).fadeOut(2000);
                     } 
                 }))
             }
@@ -56,7 +56,7 @@ $(document).ready(function(){
                     if(`${productos.id}`=== '3'){
                         $('#mostrarDescripR').html('');
                         $('#mostrarDescripR').append(`${productos.descripcion}`);
-                        $('#mostrarDescripR').fadeIn().delay(5000).fadeOut();
+                        $('#mostrarDescripR').fadeIn().delay(5000).fadeOut(2000);
                     } 
                 }))
             }
@@ -70,7 +70,7 @@ $(document).ready(function(){
                     if(`${productos.id}`=== '4'){
                         $('#mostrarDescripE').html('');
                         $('#mostrarDescripE').append(`${productos.descripcion}`);
-                        $('#mostrarDescripE').fadeIn().delay(5000).fadeOut();
+                        $('#mostrarDescripE').fadeIn().delay(5000).fadeOut(2000);
                     } 
                 }))
             }
@@ -84,7 +84,7 @@ $(document).ready(function(){
                     if(`${productos.id}`=== '5'){
                         $('#mostrarDescripC1').html('');
                         $('#mostrarDescripC1').append(`${productos.descripcion}`);
-                        $('#mostrarDescripC1').fadeIn().delay(5000).fadeOut();
+                        $('#mostrarDescripC1').fadeIn().delay(5000).fadeOut(2000);
                     } 
                 }))
             }
@@ -98,7 +98,7 @@ $(document).ready(function(){
                     if(`${productos.id}`=== '6'){
                         $('#mostrarDescripC2').html('');
                         $('#mostrarDescripC2').append(`${productos.descripcion}`);
-                        $('#mostrarDescripC2').fadeIn().delay(5000).fadeOut();
+                        $('#mostrarDescripC2').fadeIn().delay(5000).fadeOut(2000);
                     } 
                 }))
             }
@@ -112,7 +112,7 @@ $(document).ready(function(){
                     if(`${productos.id}`=== '7'){
                         $('#mostrarDescripC3').html('');
                         $('#mostrarDescripC3').append(`${productos.descripcion}`);
-                        $('#mostrarDescripC3').fadeIn().delay(5000).fadeOut();
+                        $('#mostrarDescripC3').fadeIn().delay(5000).fadeOut(2000);
                     } 
                 }))
             }
@@ -126,10 +126,13 @@ $(document).ready(function(){
                     if(`${productos.id}`=== '8'){
                         $('#mostrarDescripC4').html('');
                         $('#mostrarDescripC4').append(`${productos.descripcion}`);
-                        $('#mostrarDescripC4').fadeIn().delay(5000).fadeOut();
+                        $('#mostrarDescripC4').fadeIn().delay(5000).fadeOut(2000);
                     } 
                 }))
             }
         })
     })
+
+
+//Fin del ready    
 })

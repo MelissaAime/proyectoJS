@@ -74,4 +74,6 @@ $(document).ready(function(){
         $('#cardEight.col').fadeIn();
     })
 
+
+//Fin del ready
 })

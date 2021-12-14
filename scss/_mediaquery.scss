@@ -101,6 +101,35 @@
     }
   }
 
+  div#botonTerminar{
+    align-content: center;
+  }
+  button#total{
+    width: 5rem;
+    height: auto;
+    margin: 0.5rem;
+    margin-left: 38%;
+    font-size: 0.7rem;
+  }
+  
+  button#botonFinCompra{
+    width: 5rem;
+    height: auto;
+    font-size: 0.7rem;
+  }
+  div#subNav{
+    width: 50%;
+    margin-left: 25%;
+    height: auto;
+    border-radius: 0.25rem;
+  }
+
+  button.list-group-item{
+    height: 1.5rem;
+    padding: 0.3rem;
+    font-size: 0.4rem;
+  }
+
   //navbar
   .navbar {
     font-size: 0.7rem;

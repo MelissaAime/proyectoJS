@@ -193,7 +193,7 @@ $(document).ready(function(){
         $('#subNav').css("background-color", "white");
         $('#subNav').show();
         $('#total').hide();
-        $('#botonTerminar').append(`<div id="finCompra"><button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Finalizar compra:</button></div>`);
+        $('#botonTerminar').append(`<div id="finCompra"><button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="botonFinCompra">Finalizar compra:</button></div>`);
 
 
         $('#botonOcultar').show();
@@ -278,6 +278,7 @@ $(document).ready(function(){
             //Comprar:
             $('#compraFinalizada').click(function(){
                 $('.modal-title').html('');
+                $('.modal-body').hide();
                 $('.modal-title').prepend('Compra realizada con éxito');
                 $('#compraFinalizada').hide();
                 $('#cerrar').html('');
