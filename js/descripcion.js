@@ -2,8 +2,7 @@ $(document).ready(function(){
     
 //Descripcion de cada producto:
 
-    //No funciona:
-
+    
     // function verDescrip(id, lugar){
     //     $.getJSON('../productos.json', function(respuesta, status){
     //         if(status === 'success'){
@@ -21,6 +20,7 @@ $(document).ready(function(){
     // const lugarDesc = $('#mostrarDescripT');
     // $('#descripT').click(verDescrip(1, lugarDesc));
 
+    
     $('#descripT').click(function(){
         $.getJSON('../productos.json', function(respuesta, status){
             if(status === 'success'){

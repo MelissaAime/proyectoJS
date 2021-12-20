@@ -25,7 +25,7 @@ $(document).ready(function(){
             //Mostrar el subtotal
             subtotalidad = cantidad.val() * precio;
             totalidad.html('');
-            totalidad.append(`<span> Total: $ </span> <b id="subtotal1"> ${subtotalidad}</b>`);
+            totalidad.append(`<span> Total: $ </span> <b id="subtotal1"> ${subtotalidad}</b>`).css("color","black");
 
             //Mostrar cartel si la cant es mayor a cero
             if (cantidad.val()>0){
